@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+  <div class="col-sm">
+    <h5>Your Tasks</h5>
+
+    <form class="row" method="POST" action="{% url 'add_task' %}">
+      {% csrf_token %}
+      <div class="col-auto">
+        <label class="visually-hidden" for="task">new task</label>
+        <input type="text" class="form-control" name="task" id="task" placeholder="new task" />
+      </div>
+      <div class="col-auto">
+        <button type="submit" class="btn btn-primary">Add</button>
+      </div>
+    </form>
+
+    {% if tasks %}
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">List</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for task in tasks %}
+        <tr>
+          <td>
+            {% if not task.is_done %}
+            {{ task.name }}
+            {% else %}
+            <s>{{ task.name }}</s>
+            {% endif %}
+          </td>
+          <td>
+            <a class="btn btn-outline-primary btn-sm" href="{% url 'toggle_task' task.id %}" role="button">
+              {% if not task.is_done %}
+              Done
+              {% else %}
+              Undo
+              {% endif %}
+            </a>
+            <a class="btn btn-outline-secondary btn-sm" href="{% url 'edit_task' task.id %}" role="button">
+              Edit
+            </a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% endif %}
+
+  </div>
+</div>
+{% endblock %}
