@@ -17,7 +17,7 @@ def add_task(request):
 
 
 def edit_task(request, id):
-    task = get_object_or_404(Task, pk = id)
+    task = get_object_or_404(Task, pk=id)
 
     if request.method == 'POST':
         task.name = request.POST.get('task')
@@ -28,14 +28,14 @@ def edit_task(request, id):
 
 
 def delete_task(request, id):
-    task = get_object_or_404(Task, pk = id)
+    task = get_object_or_404(Task, pk=id)
     task.delete()
 
     return redirect('index')
 
 
 def toggle_task(request, id):
-    task = get_object_or_404(Task, pk = id)
+    task = get_object_or_404(Task, pk=id)
 
     if not task.is_done:
         task.is_done = True
