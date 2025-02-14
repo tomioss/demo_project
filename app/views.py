@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 
 from rest_framework import viewsets
-from rest_framework.permissions import AllowAny
 
 from app.models import Task
 from app.serializers import TaskSerializer
@@ -53,4 +52,4 @@ def toggle_task(request, id):
 class TaskViewSet(viewsets.ModelViewSet):
     queryset = Task.objects.all()
     serializer_class = TaskSerializer
-    permission_classes = [AllowAny]
+
