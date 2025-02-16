@@ -1,7 +1,7 @@
 # demo-project
 This is a demo project.  
-Follow the [installation](##Installation) section to run this project.  
-Once completed, run `http://localhost:8000/` in your web browser.
+Follow the installation section to run this project.  
+There is also a section on how to create your own Django project.
 
 
 ## Requirements
@@ -14,6 +14,7 @@ pip install -r requirements.txt
 python manage.py migrate
 python manage.py runserver
 ```
+Once completed, run `http://localhost:8000/` in your web browser.
 
 
 ### Running REST APIs
@@ -43,6 +44,44 @@ Delete a Task by ID:
 ```
 curl -X DELETE http://localhost:8000/api/tasks/1/
 ```
+
+
+### Creating your own Django project
+Run the commands in your terminal.
+
+Download Django to your computer:
+```
+pip install Django
+```
+
+Create the Django project files:
+```
+django-admin startproject project_name
+```
+
+Open the project folder in your terminal:
+```
+cd project_name
+```
+
+Create a new app folder:
+```
+django-admin startapp app_name
+```
+
+Create the required tables for your database:
+```
+python manage.py migrate
+```
+
+Run your server:
+```
+python manage.py runserver
+```
+
+Once completed, open `http://localhost:8000/` in your web browser.
+
+You can place your custom code in the `app_name` folder
 
 
 ## Guides
