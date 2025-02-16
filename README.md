@@ -1,5 +1,7 @@
 # demo-project
-This is a demo project
+This is a demo project.  
+Follow the [installation](##Installation) section to run this project.  
+Once completed, run `http://localhost:8000/` in your web browser.
 
 
 ## Requirements
@@ -14,7 +16,9 @@ python manage.py runserver
 ```
 
 
-### Curl commands for REST APIs
+### Running REST APIs
+These contain the curl commands needed to run the REST APIs. You can also use postman to run the APIs.
+
 Get the List of Tasks:
 ```
 curl http://localhost:8000/api/tasks/
@@ -42,6 +46,8 @@ curl -X DELETE http://localhost:8000/api/tasks/1/
 
 
 ## Guides
+These are tutorials for further learning.
+
 Official Django Tutorial: [https://docs.djangoproject.com/en/5.1/intro/](https://docs.djangoproject.com/en/5.1/intro/)
 
 Offical Django REST Tutorial: [https://www.django-rest-framework.org/tutorial/quickstart/](https://www.django-rest-framework.org/tutorial/quickstart/)
