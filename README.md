@@ -16,6 +16,9 @@ python manage.py runserver
 ```
 Once completed, run `http://localhost:8000/` in your web browser.
 
+You can create a super user using `python manage.py createsuperuser`.  
+This user can access the `http://localhost:8000/admin` page where you can view the database records.
+
 
 ### Running REST APIs
 These contain the curl commands needed to run the REST APIs. You can also use postman to run the APIs.
